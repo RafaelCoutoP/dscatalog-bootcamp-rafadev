@@ -2,14 +2,13 @@
     margin-top: 40px;
     padding-left: 40px;
     padding-right: 40px;
+    padding-block-end: 40px;
 }
 
 .home-content{
-    background-color: #FFF;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25); // sombreamento da borda
-    border-radius: 20px; // arredonda a borda
     padding-top: 155px;
     padding-bottom: 155px;
+    padding-left: 100px;
 }
 
 .text-title{
@@ -30,4 +29,3 @@
 .main-image{
     width: 100%;
 }
-
