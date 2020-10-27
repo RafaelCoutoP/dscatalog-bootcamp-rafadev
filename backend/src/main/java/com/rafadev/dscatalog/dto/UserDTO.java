@@ -13,10 +13,12 @@ public class UserDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Long id;
+	
 	@NotBlank(message = "Campo Obrigatorio")
 	private String firstName;
     private String lastName;
-	@Email(message = "Favor entrar com email válido")
+	
+    @Email(message = "Favor entrar com email válido")
     private String email;
 	
 	private Set<RoleDTO> roles = new HashSet<>();
@@ -26,6 +28,7 @@ public class UserDTO implements Serializable {
 	}
 
 	public UserDTO(Long id, String firstName, String lastName, String email) {
+		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -33,6 +36,7 @@ public class UserDTO implements Serializable {
 	}
 	               //método EAGER está fazendo o user vim com as roles como padrão.  
 	public UserDTO(User entity) {
+		super();
 		id = entity.getId();
 		firstName = entity.getFirstName();
 		lastName = entity.getLastName();
