@@ -21,7 +21,7 @@ public class AppConfig {
 
 	}
 
-	// são objetos que vão ser capazes de acessar um token JWT
+	// são objetos que vão ser capazes de acessar um token JWT/ codigo padrão 
 	@Bean
 	public JwtAccessTokenConverter accessTokenConverter() {
 		JwtAccessTokenConverter tokenConverter = new JwtAccessTokenConverter();
