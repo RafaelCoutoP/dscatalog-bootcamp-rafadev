@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { makeRequest } from '../../../../../core/utils/request';
+import { makePrivateRequest } from '../../../../../core/utils/request';
 import BaseForm from '../../BaseForm';
 import './styles.scss';
 
@@ -8,16 +8,20 @@ type formState={
     name: string;
     price:string;
     category: string;
+    description: string;
 }
+
+type FormEvent = React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>; 
 
 const Form = () => {
     const [formData, setformData] = useState<formState>({
         name:'',
         price:'',
-        category:''  
+        category:'1',
+        description: ''  
     });
 
-    const handleOnChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const handleOnChange = (event:FormEvent ) => {
         const name = event.target.name;
         const value = event.target.value;
         
@@ -33,7 +37,10 @@ const Form = () => {
            imgUrl: 'https://imagens.canaltech.com.br/ofertas/o14410.1.jpg'
         }
 
-        makeRequest({ url: '/products', method:'POST', data: payload});
+        makePrivateRequest({ url: '/products', method:'POST', data: payload})
+        .then(() => {
+            setformData({ name: '', category: '', price: '', description: '' });    
+        });
     }
 
     return (
@@ -65,6 +72,16 @@ const Form = () => {
                             className="form-control"
                             onChange={handleOnChange}
                             placeholder="Preço do Produto"
+                        />
+                    </div>
+                    <div className="col-6">
+                        <textarea 
+                        name="description" 
+                        value={formData.description}
+                        onChange={handleOnChange}
+                        className="form-control"
+                        cols={30} 
+                        rows={10} 
                         />
                     </div>
                 </div>
