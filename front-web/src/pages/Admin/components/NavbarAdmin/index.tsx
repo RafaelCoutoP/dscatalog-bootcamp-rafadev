@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { isAllowedByRole } from '../../../../core/utils/auth';
 import './styles.scss';
 
 //automaticamente o NavLink ativa por padrão a classe active do css criada.
@@ -16,11 +17,13 @@ const Navbar = () => (
                      Minhas Categorias
                      </NavLink>
             </li>
-            <li>
+            {isAllowedByRole(['ROLE_ADMIN']) && (
+                <li>
                 <NavLink to="/admin/users" className="admin-nav-item">
                      Meus Usuários
                      </NavLink>
             </li>
+            )}
         </ul>
     </nav>
 );
