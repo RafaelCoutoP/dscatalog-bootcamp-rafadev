@@ -34,7 +34,7 @@ const Form = () => {
         const payload ={
            ...formData,
            categories:[{ id: formData.category }], 
-           imgUrl: 'https://imagens.canaltech.com.br/ofertas/o14410.1.jpg'
+           imgUrl: 'https://conteudo.imguol.com.br/c/entretenimento/26/2020/06/11/ps5-1591910179141_v2_1920x1080.jpg'
         }
 
         makePrivateRequest({ url: '/products', method:'POST', data: payload})
