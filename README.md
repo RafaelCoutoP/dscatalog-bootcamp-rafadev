@@ -16,12 +16,26 @@ para o tipo de autoridade do usuario credenciado, o operador tem o poder de adic
 adicionando poder para manipular o CRUD de usuarios.
 
 ## Layout web
-![Web 1]
 
-![Web 2]
+### Visão visitante 
+
+![Catalog 1](https://github.com/RafaelCoutoP/movie-flix-devrafac/blob/main/assetss/Captura%20de%20Tela%20(81).png)
+
+![Catalog 2](https://github.com/RafaelCoutoP/movie-flix-devrafac/blob/main/assetss/Captura%20de%20Tela%20(82).png)
+
+![Catalog 3](https://github.com/RafaelCoutoP/movie-flix-devrafac/blob/main/assetss/Captura%20de%20Tela%20(83).png)
+
+### Visão administrador
+
+![Catalog 4](https://github.com/RafaelCoutoP/movie-flix-devrafac/blob/main/assetss/Captura%20de%20Tela%20(84).png)
+
+![Catalog 5](https://github.com/RafaelCoutoP/movie-flix-devrafac/blob/main/assetss/Captura%20de%20Tela%20(85).png)
+
 
 ## Modelo conceitual
-![Modelo Conceitual]
+
+![Modelo Conceitual](https://github.com/RafaelCoutoP/movie-flix-devrafac/blob/main/assetss/Captura%20de%20Tela%20(80).png)
+
 
 # Tecnologias utilizadas
 ## Back end
@@ -29,15 +43,20 @@ adicionando poder para manipular o CRUD de usuarios.
 - Spring Boot
 - JPA / Hibernate
 - Maven
+- Spring Security
+- Banco H2
+- Banco Postgresql
+- OAuth2
+- Token JWT
+- BCrypt
 ## Front end
 - HTML / CSS / JS / TypeScript
 - ReactJS
-- React Native
-- Apex Charts
-- Expo
+- BootStrap
+- Axios
 ## Implantação em produção
 - Back end: Heroku
-- Front end web: Netlify
+- Front end web: em produção
 - Banco de dados: Postgresql
 
 # Como executar o projeto
@@ -47,7 +66,7 @@ Pré-requisitos: Java 11
 
 ```bash
 # clonar repositório
-git clone https://github.com/devsuperior/sds1-wmazoni
+git clone https://github.com/RafaelCoutoP/dscatalog-bootcamp-rafadev.git
 
 # entrar na pasta do projeto back end
 cd backend
@@ -61,7 +80,7 @@ Pré-requisitos: npm / yarn
 
 ```bash
 # clonar repositório
-git clone https://github.com/devsuperior/sds1-wmazoni
+git clone https://github.com/RafaelCoutoP/dscatalog-bootcamp-rafadev.git
 
 # entrar na pasta do projeto front end web
 cd front-web
