@@ -1,3 +1,6 @@
+# DS Catalog 
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/RafaelCoutoP/dscatalog-bootcamp-rafadev/blob/main/LICENSE)
+
 # Sobre o projeto
 
 DS Catalog é uma aplicação full stack web desenvolvida com os ensinamentos do BootCamp DevSuperior, ministrado pela equipe de ensino [DevSuperior].
