@@ -33,9 +33,12 @@ export const getSessionData = ()=> {             //operador de coalescência nul
 export const getAccessToken = () => {
     const sessionData = getSessionData();
 
-    const tokenDecode = jwtDecode(sessionData.access_token);
-
-    return tokenDecode as AccessToken;
+    try{            // try necessario para capturar a exceção e lançar um objeto vazio para a aplicação rodar sem problemas
+        const tokenDecode = jwtDecode(sessionData.access_token);
+        return tokenDecode as AccessToken;
+    } catch (error){
+        return {} as AccessToken;
+    }
 }
 
 export const isTokenValid = () =>{
@@ -61,7 +64,7 @@ export const isAllowedByRole = (routeRoles: Role[] = []) => {
     
     const { authorities } = getAccessToken();
 
-    return routeRoles.some(role => authorities.includes(role));
+    return routeRoles.some(role => authorities?.includes(role));
 }
 
 
