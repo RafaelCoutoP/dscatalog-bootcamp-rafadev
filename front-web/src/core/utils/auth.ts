@@ -1,4 +1,8 @@
 import jwtDecode from 'jwt-decode';
+import history from './history';
+
+
+
 export const CLIENT_ID = 'dscatalog';
 export const CLIENT_SECRET = 'dscatalog123';
 
@@ -20,7 +24,7 @@ type AccessToken ={
 }
 
 export const saveSessionData = (loginResponse: LoginResponse) => {
-    localStorage.setItem('authData', JSON.stringify(loginResponse)); // transformando um obj par string
+    localStorage.setItem('authData', JSON.stringify(loginResponse)); // transformando um obj para string
 }
 
 export const getSessionData = ()=> {             //operador de coalescência nula (retorna tudo a direita quando a esquerda for null || undefined)     
@@ -67,5 +71,9 @@ export const isAllowedByRole = (routeRoles: Role[] = []) => {
     return routeRoles.some(role => authorities?.includes(role));
 }
 
+export const logout = () => {
+    localStorage.removeItem('authData');
+    history.replace('/auth/login');
+}
 
 
