@@ -20,7 +20,6 @@ const Catalog = () => {
             linesPerPage: 12
         }
         setIsLoading(true)   
-        // loading inicia como true 
         makeRequest({ url: '/products', params })
             .then(response => setProductsResponse(response.data))
             .finally(() => {
