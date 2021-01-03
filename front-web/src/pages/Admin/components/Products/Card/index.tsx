@@ -6,10 +6,11 @@ import './styles.scss';
 
 type Props = {
     product: Product;
+    onRemove: (productId: number) => void;
 }
 
 
-const Card = ({ product }:Props) => {
+const Card = ({ product, onRemove }:Props) => {
     return(
         <div className="card-base card-product-admin">
             <div className="row">
@@ -31,7 +32,7 @@ const Card = ({ product }:Props) => {
                           Categoria 1
                         </span>
                         <span className="badge rounded-pill bg-secondary mr-2">
-                          Categoria 1
+                          Categoria 2
                         </span>
                     </div>
                 </div>
@@ -46,6 +47,7 @@ const Card = ({ product }:Props) => {
                     <button 
                     type="button" 
                     className="btn btn-outline-danger btn-block border-radius-10"
+                    onClick={() => onRemove(product.id)}
                     >
                      EXCLUIR
                     </button>
