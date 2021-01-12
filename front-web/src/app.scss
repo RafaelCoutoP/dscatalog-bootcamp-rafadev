@@ -18,7 +18,7 @@ ul {
 a {
   &:hover {
     text-decoration: none;
-    color: unset; // zera configurações padrões do bootstrap e herda a cor que foi passada
+    color: unset;
   }
 }
 

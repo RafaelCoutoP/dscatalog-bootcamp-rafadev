@@ -24,20 +24,20 @@ type AccessToken ={
 }
 
 export const saveSessionData = (loginResponse: LoginResponse) => {
-    localStorage.setItem('authData', JSON.stringify(loginResponse)); // transformando um obj para string
+    localStorage.setItem('authData', JSON.stringify(loginResponse)); 
 }
 
-export const getSessionData = ()=> {             //operador de coalescência nula (retorna tudo a direita quando a esquerda for null || undefined)     
+export const getSessionData = ()=> {                 
     const sessionData = localStorage.getItem('authData') ?? '{}';
     const parsedSessionData = JSON.parse(sessionData);
     
-    return parsedSessionData as LoginResponse; // está transformando o "any" em uma tipo de dado conhecido
+    return parsedSessionData as LoginResponse; 
 }
 
 export const getAccessToken = () => {
     const sessionData = getSessionData();
 
-    try{            // try necessario para capturar a exceção e lançar um objeto vazio para a aplicação rodar sem problemas
+    try{           
         const tokenDecode = jwtDecode(sessionData.access_token);
         return tokenDecode as AccessToken;
     } catch (error){

@@ -13,7 +13,6 @@ const Catalog = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [activePage, setActivePage] = useState(0);
 
-    // acessa o ciclo de vida do componente  
     useEffect(() => {
         const params = {
             page: activePage,

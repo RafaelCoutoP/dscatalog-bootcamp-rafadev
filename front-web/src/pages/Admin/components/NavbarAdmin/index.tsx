@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import { isAllowedByRole } from '../../../../core/utils/auth';
 import './styles.scss';
 
-//automaticamente o NavLink ativa por padrão a classe active do css criada.
 const Navbar = () => (
     <nav className='admin-nav-container'>
         <ul>

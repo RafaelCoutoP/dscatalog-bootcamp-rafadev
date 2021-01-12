@@ -5,7 +5,6 @@ import List from './List';
 
 const Products = () => {
 
-    // cuiado em declarar as ordem das rotas! 
     return (
         <div>
            <Switch>

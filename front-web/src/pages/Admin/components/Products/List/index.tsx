@@ -14,7 +14,6 @@ const List = () => {
     const [activePage, setActivePage] = useState(0);
     const history = useHistory();
 
-    // o useCallback está garantindo que não vai ser criado uma nova referência ao getProducts a cada renderização
     const getProducts = useCallback(() => {
         const params = {
             page: activePage,

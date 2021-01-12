@@ -26,7 +26,7 @@ if (error.response.status === 401){
     return Promise.reject(error);
 });
 
-// jeito básico de de fazer uma requisição HTTP.
+
 export const makeRequest = ( { method = 'GET', url, data, params, headers }:RequestParams) => {
     return axios({
        method,
@@ -37,7 +37,7 @@ export const makeRequest = ( { method = 'GET', url, data, params, headers }:Requ
     });
 }
 
-// requisição mais robusta passando dados de autenticação.
+
 export const makePrivateRequest = ({ method = 'GET', url, data, params }:RequestParams)=>{
 
     const sessionData = getSessionData();
@@ -51,7 +51,7 @@ export const makePrivateRequest = ({ method = 'GET', url, data, params }:Request
 
 export const makeLogin = (loginData:LoginData ) => {
     
-    const token = `${CLIENT_ID}:${CLIENT_SECRET}`; // concatenação dos dois gera o token.
+    const token = `${CLIENT_ID}:${CLIENT_SECRET}`; 
 
     const headers ={
         Authorization: `Basic ${window.btoa(token)}`,
