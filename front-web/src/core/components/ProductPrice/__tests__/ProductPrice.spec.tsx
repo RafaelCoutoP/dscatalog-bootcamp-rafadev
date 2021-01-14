@@ -17,7 +17,7 @@ test('should render ProductPrice', () => {
     expect(priceElement).toBeInTheDocument();
 });
 
-test('should render ProductPrice when price equals zero', () => {
+it('should render ProductPrice when price equals zero', () => {
     
     const price = 0;
 
