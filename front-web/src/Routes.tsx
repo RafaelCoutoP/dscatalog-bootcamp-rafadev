@@ -9,7 +9,7 @@ import Auth from './pages/Auth';
 import history from './core/utils/history';
 
 const Routes = () => (
-    <Router history={history}>
+    <Router history={history}  >
     <NavBar />
         <Switch>
             <Route path="/" exact>
