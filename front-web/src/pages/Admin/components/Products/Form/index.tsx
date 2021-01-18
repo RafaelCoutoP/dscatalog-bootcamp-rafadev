@@ -29,7 +29,6 @@ const Form = () => {
     const [isLoadingCategories, setIsLoadingCategories] = useState(false);
     const isEditing = productId !== 'create';
 
-
     useEffect(() => {
         if (isEditing) {
             makeRequest({ url: `/products/${productId}` })
@@ -53,7 +52,6 @@ const Form = () => {
 
 
     const onSubmit = (data: FormState) => {
-
         makePrivateRequest({
             url: isEditing ? `/products/${productId}` : '/products',
             method: isEditing ? 'PUT' : 'POST',
@@ -65,9 +63,8 @@ const Form = () => {
             })
             .catch(() => {
                 toast.error("Erro ao salvar produto!");
-            })
+            }) 
     }
-
 
     return (
 
@@ -85,6 +82,7 @@ const Form = () => {
                                 type="text"
                                 className="form-control input-base "
                                 placeholder="Nome do produto"
+                                data-testid="name"
                             />
                             {errors.name && (
                                 <div className="invalid-feedback d-block">
@@ -93,6 +91,7 @@ const Form = () => {
                             )}
                         </div>
                         <div className="margin-bottom-30">
+                            <label htmlFor="categories" className="d-none">Categorias</label>
                             <Controller
                             as={Select}
                             name="categories"
@@ -102,13 +101,15 @@ const Form = () => {
                             isLoading={isLoadingCategories}
                             getOptionLabel={(option: Category)=> option.name} 
                             getOptionValue={(option: Category)=> String(option.id)} 
+                            inputId="categories"
+                            defaultValue=""
                             isMulti
                             classNamePrefix="categories-select"
                             placeholder="Categorias"
                             />
                              {errors.categories && (
                                 <div className="invalid-feedback d-block">
-                                    Campo Obrigatório
+                                    Campo obrigatório
                                 </div>
                             )}
 
@@ -120,6 +121,7 @@ const Form = () => {
                                 type="number"
                                 className="form-control input-base"
                                 placeholder="Preço"
+                                data-testid="price"
                             />
                             {errors.price && (
                                 <div className="invalid-feedback d-block">
@@ -136,6 +138,7 @@ const Form = () => {
                                 type="text"
                                 className="form-control input-base "
                                 placeholder="Imagem do Produto"
+                                data-testid="imgUrl"
                             />
                             {errors.imgUrl && (
                                 <div className="invalid-feedback d-block">
@@ -151,7 +154,9 @@ const Form = () => {
                             className="form-control input-base"
                             placeholder="Descrição"
                             cols={30}
-                            rows={10} />
+                            rows={10} 
+                            data-testid="description"
+                            />
                         {errors.description && (
                             <div className="invalid-feedback d-block">
                                 {errors.description.message}
