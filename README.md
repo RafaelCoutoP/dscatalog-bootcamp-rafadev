@@ -2,6 +2,7 @@
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/RafaelCoutoP/dscatalog-bootcamp-rafadev/blob/main/LICENSE)
 
 # Sobre o projeto
+Link do Projeto em Produção: https://rafaelcdev-dscatalog.netlify.app/
 
 DS Catalog é uma aplicação full stack web desenvolvida com os ensinamentos do BootCamp DevSuperior, ministrado pela equipe de ensino [DevSuperior].
 
@@ -56,7 +57,7 @@ adicionando poder para manipular o CRUD de usuários.
 - Axios
 ## Implantação em produção
 - Back end: Heroku
-- Front end web: em produção
+- Front end web: Netlify
 - Banco de dados: Postgresql
 
 # Como executar o projeto
